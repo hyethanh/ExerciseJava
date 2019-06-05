@@ -6,7 +6,7 @@ public class Exercise5 {
 
         for (int i = 3; i <= n; i++) {
             c = a + b;
-            result += c;
+            result += c+" ";
             a = b;
             b = c;
         }
