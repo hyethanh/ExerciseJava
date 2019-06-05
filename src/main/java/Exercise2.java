@@ -1,13 +1,13 @@
 public class Exercise2 {
 
-    public void mul(int n){
-        int i = 2;
+    public int sum(int n){
+        int k;
+        int sum = 0;
         while(n>0) {
-            if(n%i==0) {
-                System.out.print(i+"  ");
-                n=n/i;
-            }
-            else i++;
+            k = n%10;
+            n = n/10;
+            sum += k;
         }
+        return sum;
     }
 }
