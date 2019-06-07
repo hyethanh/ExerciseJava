@@ -17,6 +17,6 @@ public class Exercise1 {
     public int bcnn(int a, int b){
         int x;
         x= ucln(a,b);
-        return (((a*b)/x));
+        return a * b / ucln(a, b) ;
     }
 }
