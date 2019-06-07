@@ -4,12 +4,12 @@ public class Exercise3 {
         int i = 2;
         while(n>0) {
             if(n%i==0) {
-                result += i + "*";
+                result += i+"*";
                 n=n/i;
             }
             else i++;
         }
-        result = result.substring(0);
+        result = result.substring(0,result.length()-4);
         return result;
     }
 }
