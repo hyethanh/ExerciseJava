@@ -9,5 +9,8 @@ public class Exercise3Test {
         assertEquals(new Exercise3().mullPrime(100),"2*2*5*5");
         assertEquals(new Exercise3().mullPrime(600),"2*2*2*3*5*5");
         assertEquals(new Exercise3().mullPrime(3),"3");
+        assertEquals(new Exercise3().mullPrime(1),"");
+        assertEquals(new Exercise3().mullPrime(0),"");
+        assertEquals(new Exercise3().mullPrime(100000),"2*2*2*2*2*5*5*5*5*5");
     }
 }
