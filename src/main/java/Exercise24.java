@@ -1,4 +1,4 @@
-public class Exercise21 {
+public class Exercise24 {
 
     public int countValidNumber(int n) {
 
