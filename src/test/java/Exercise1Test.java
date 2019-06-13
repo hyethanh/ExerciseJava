@@ -19,5 +19,8 @@ public class Exercise1Test {
     public void test_ucbc() {
         assertEquals(new Exercise1().ucln(0, 3), 3);
         assertEquals(new Exercise1().bcnn(0, 3), 0);
+
+        assertEquals(new Exercise1().ucln(2,0),2);
+        assertEquals(new Exercise1().bcnn(2,0),0);
     }
 }
