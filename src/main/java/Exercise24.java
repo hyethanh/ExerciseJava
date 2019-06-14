@@ -1,6 +1,6 @@
 public class Exercise24 {
 
-    public int countValidNumber(int n) {
+    public int countFibNumber(int n) {
 
         int count = 1;
         int a = 0, b = 1;
