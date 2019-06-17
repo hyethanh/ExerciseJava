@@ -1,17 +1,20 @@
 public class Exercise5 {
     public String Fibonacci(int n) {
 
-        int c = 0;
-        int a = 1, b = 1;
-        String result = "1 1";
+        int a = 0;
+        int b = 1;
+        int c = 1;
 
-        do {
+        StringBuilder result = new StringBuilder();
+
+        while (c <= n){
+            result.append(c).append(" ");
+
             c = a + b;
-            result += " " + c;
             a = b;
             b = c;
-        } while (a + b <= n);
+        }
 
-        return result;
+        return result.toString().trim();
     }
 }
