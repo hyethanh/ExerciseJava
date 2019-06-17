@@ -1,15 +1,24 @@
 public class Exercise3 {
     public String mullPrime(int n){
-        String result="";
+
+        StringBuilder result= new StringBuilder();
         int i = 2;
-        while(n>0) {
+
+        while(n>=i) {
             if(n%i==0) {
-                result += i + "*";
+
+                result.append(i);
                 n=n/i;
+
+                if(n>1){
+                    result.append("*");
+                }
             }
-            else i++;
+            else{
+                i++;
+            }
         }
-        result = result.substring(0);
-        return result;
+
+        return result.toString();
     }
 }
