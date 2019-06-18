@@ -2,25 +2,41 @@ public class ArrayExercise14 {
 
     public int[] changeArray(int[][] arr) {
 
-        int rows = arr.length;
-        int cols = arr[0].length;
-        int index = 0;
-        int size = cols * rows;
-        int[] result = new int[size];
+        int[] result = new int[arr.length * arr[0].length];
 
-        for (int i = 0; i < rows; i++) {
-            if (i % 2 == 0) {
-                for (int j = 0; j < cols; j++) {
-                    result[index] = arr[i][j];
-                    index++;
-                }
-            } else {
-                for (int j = cols - 1; j >= 0; j--) {
-                    result[index] = arr[i][j];
-                    index++;
-                }
+        int index = 0;
+        int left = 0;
+        int right = arr[0].length - 1;
+        int top = 0;
+        int bottom = arr.length - 1;
+
+        while (index < result.length) {
+            for (int i = left; i <= right; i++) {
+                result[index++] = arr[top][i];
 
             }
+            top++;
+
+            for (int i = top; i <= bottom; i++) {
+                result[index++] = arr[i][right];
+            }
+            right--;
+
+            if (bottom < top) {
+                break;
+            }
+
+            for (int i = right; i >= left; i--) {
+                result[index] = arr[bottom][i];
+                index++;
+            }
+            bottom--;
+
+            for (int i = bottom; i >= top; i--) {
+                result[index] = arr[i][left];
+                index++;
+            }
+            left++;
         }
 
         return result;

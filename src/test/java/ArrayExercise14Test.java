@@ -13,8 +13,7 @@ public class ArrayExercise14Test {
                         {6, 7, 8, 9, 10},
                         {11, 12, 13, 14, 15}}),
                 new int[]
-                        {1, 2, 3, 4, 5, 10, 9, 8, 7, 6, 11, 12, 13, 14, 15});
-
+                        {1, 2, 3, 4, 5, 10, 15, 14, 13, 12, 11, 6, 7, 8, 9});
         assertArrayEquals(new ArrayExercise14().changeArray(
                 new int[][]{
                         {1, 2, 3, 4}}),
