@@ -8,5 +8,6 @@ public class StringExercise10Test {
     public void extendString_test(){
 
         assertEquals(new StringExercise10().extendString("abc4e6fd"),"abcccceeeeeefd");
+        assertEquals(new StringExercise10().extendString("a10b11"),"aaaaaaaaaabbbbbbbbbbb");
     }
 }
