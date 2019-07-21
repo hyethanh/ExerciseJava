@@ -9,6 +9,7 @@ public class StringExercise9Test {
 
         assertEquals(new StringExercise9().abridgeString("abcccceeeeeefd"), "abc4e6fd");
         assertEquals(new StringExercise9().abridgeString("abbbbbbbbbbbbbc"), "ab13c");
+        assertEquals(new StringExercise9().abridgeString("abbbbbbbbbbbbbcc"), "ab13c2");
 
     }
 }
