@@ -4,7 +4,7 @@ public class StringExercise9 {
 
         StringBuilder result = new StringBuilder();
         int count = 1;
-
+        str = str + " ";
         result.append(str.charAt(0));
 
         for (int i = 1; i < str.length(); i++) {
@@ -14,20 +14,17 @@ public class StringExercise9 {
                 count++;
 
             } else {
-
                 if (count != 1) {
 
-                    result.append(Integer.toString(count) + str.charAt(i));
+                    result.append(count);
                     count = 1;
 
-                } else {
-
-                    result.append(str.charAt(i));
-
                 }
+                result.append(str.charAt(i));
             }
         }
 
-        return result.toString();
+        return result.toString().trim();
     }
 }
+
