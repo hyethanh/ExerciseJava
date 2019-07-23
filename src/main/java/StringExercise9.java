@@ -5,6 +5,7 @@ public class StringExercise9 {
         StringBuilder result = new StringBuilder();
         int count = 1;
         str = str + " ";
+
         result.append(str.charAt(0));
 
         for (int i = 1; i < str.length(); i++) {
