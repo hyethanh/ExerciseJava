@@ -12,7 +12,7 @@ public class Exercise25 {
             a = b;
             b = c;
 
-            if (a >= m){
+            if (a > m){
                 count++;
             }
         }
