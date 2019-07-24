@@ -4,17 +4,18 @@ public class ArrayExercise9 {
 
         int right = arr.length - 1;
         int left = 0;
-        int mid = (left + right) / 2;
 
         while (right >= left) {
+
+            int mid = (left + right) / 2;
 
             if (arr[mid] == n) {
                 return mid;
             }
-            if (arr[mid] > n) {
+            else if (arr[mid] > n) {
                 right = mid - 1;
             }
-            if (arr[mid] < n) {
+            else  {
                 left = mid + 1;
             }
         }
