@@ -3,22 +3,28 @@ public class StringExercise10 {
     public String extendString(String str) {
 
         StringBuilder result = new StringBuilder();
-        int count;
-        String temp = "";
+        int count = 0;
 
-        for (int i=0;i<str.length();i++){
-            if(!Character.isDigit(str.charAt(i))){
-                result.append(str.charAt(i));
+        char previous = str.charAt(0);
+
+        for (int i = 1; i <= str.length(); i++) {
+
+            if (i < str.length() && Character.isDigit(str.charAt(i))) {
+                count = 10 * count + str.charAt(i) - '0';
             }
-           else {
-                count = Character.getNumericValue(str.charAt(i));
-                while (count != 1) {
-                    result.append(str.charAt(i - 1));
-                    count--;
+
+            if (i == str.length() || !Character.isDigit(str.charAt(i))) {
+                for (int j = 0; j < Math.max(1, count); j++) {
+                    result.append(previous);
+                }
+                count = 0;
+
+                if (i < str.length()) {
+                    previous = str.charAt(i);
                 }
             }
         }
 
-        return result.toString();
+        return result.toString().trim();
     }
 }
