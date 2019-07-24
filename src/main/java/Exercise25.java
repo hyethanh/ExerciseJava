@@ -5,14 +5,14 @@ public class Exercise25 {
         int a = 0;
         int b = 1;
         int count = 0;
-        if (a >= m) {
 
-            while (b <= n) {
+        while (b <= n) {
 
-                int c = a + b;
-                a = b;
-                b = c;
+            int c = a + b;
+            a = b;
+            b = c;
 
+            if (a >= m) {
                 count++;
             }
         }
