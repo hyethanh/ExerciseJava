@@ -7,14 +7,16 @@ public class StringExercise6 {
 
         for (char s : str) {
             if (Character.isLowerCase(s)) {
-                s = (char) (s - 32);
+
+                s = Character.toUpperCase(s);
+
             } else if (Character.isUpperCase(s)) {
-                s = (char) (s + 32);
+
+                s = Character.toLowerCase(s);
             }
             result.append(s);
         }
 
         return result.toString();
-
     }
 }
