@@ -10,7 +10,7 @@ public class StringExercise6 {
 
                 s = Character.toUpperCase(s);
 
-            } else if (Character.isUpperCase(s)) {
+            } else  {
 
                 s = Character.toLowerCase(s);
             }
