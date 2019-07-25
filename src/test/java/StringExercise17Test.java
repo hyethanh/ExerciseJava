@@ -19,6 +19,8 @@ public class StringExercise17Test {
         assertEquals(new StringExercise17().subtractString("25","8"),"17");
         assertEquals(new StringExercise17().subtractString("8","25"),"-17");
         assertEquals(new StringExercise17().subtractString("18","25"),"-7");
-
+        assertEquals(new StringExercise17().subtractString("208","109"),"99");
+        assertEquals(new StringExercise17().subtractString("2384","489"),"1895");
+        assertEquals(new StringExercise17().subtractString("67158762162384947262839","8272611830489939012342"),"58886150331895008250497");
     }
 }
