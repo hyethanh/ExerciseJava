@@ -15,7 +15,8 @@ public class StringExercise17 {
         StringBuilder result = new StringBuilder();
 
         int length = Math.max(str1.length(), str2.length());
-        int memory = 0;
+        int memory = 1;
+        int memory2 = 0;
 
         if (str1.length() < str2.length() || str1.length() == str2.length() && str1.compareTo(str2) < 0) {
             return "-" + subtractString(str2, str1);
@@ -23,26 +24,27 @@ public class StringExercise17 {
 
         for (int i = 0; i < length; i++) {
 
-            int sub = getNumberic(str1, i) - getNumberic(str2, i) - memory;
+            int sub = getNumberic(str1, i) - getNumberic(str2, i) - memory2;
 
-            if (getNumberic(str1, i) < getNumberic(str2, i)) {
+            if (getNumberic(str1, i) < (getNumberic(str2, i) + memory2)) {
 
-                memory = 1;
-                sub = memory * 10 + getNumberic(str1, i) - getNumberic(str2, i);
+                sub = memory * 10 + getNumberic(str1, i) - getNumberic(str2, i) - memory2;
 
+                memory2 = 1;
                 result.insert(0, sub);
+
             } else {
 
                 result.insert(0, sub);
-                memory = 0;
+                memory2 = 0;
 
             }
+
         }
 
         if (result.charAt(0) == '0') {
             result.deleteCharAt(0);
         }
-
 
         return result.toString();
     }
