@@ -16,16 +16,6 @@ public class StringExercise15 {
             }
         }
 
-        int temp = sum;
-
-        while (temp % 10 != 0) {
-
-            temp++;
-
-        }
-
-        x = temp - sum;
-
-        return x;
+        return (10 - sum % 10) % 10;
     }
 }
