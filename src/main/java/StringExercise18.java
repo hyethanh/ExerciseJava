@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class StringExercise18 {
 
     public int getNumberic(String str, int i) {
@@ -8,6 +10,12 @@ public class StringExercise18 {
         }
 
         return 0;
+    }
+
+    public String genZeros(int n){
+        char[] chars = new char[n];
+        Arrays.fill(chars, '0');
+        return new String(chars);
     }
 
     public String addString(String str1, String str2) {
@@ -33,30 +41,37 @@ public class StringExercise18 {
         return sb.toString();
     }
 
-    public String multiplyString(String str1,String str2){
+    public String multiplyString (String str1,String str2) {
 
-        StringBuilder result = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
+        String temp = sb.toString();
+
+        for(int i=str2.length()-1;i>=0;i--){
+
+                temp = addString(temp, multiplyString(str1,str2.charAt(i)-'0')+genZeros(str2.length() - 1 - i));
+            }
+        sb.append(temp);
+
+        return sb.toString();
+    }
+
+    public String multiplyString(String str, int n){
+
+        StringBuilder sb = new StringBuilder();
         int memory=0;
 
-        for(int i=0;i<str1.length();i++){
-            for(int j=0;j<str2.length();j++){
+        for(int i=str.length()-1;i>=0;i--){
 
-                int mul = getNumberic(str1,i)*getNumberic(str2,j)+memory;
-                memory = mul/10;
-                mul = mul%10;
-                result.insert(0,mul);
-
-                if(i==str1.length()-1&&j==str2.length()-1){
-                    if(memory!=0){
-                        result.insert(0,memory);
-                    }
-
-                }
-
-            }
-
+            int t = n*(str.charAt(i)-'0')+memory;
+            //sb.append(t%10);
+            sb.insert(0,t%10);
+            memory = t/10;
         }
-        return result.toString();
 
+        if(memory!=0){
+            sb.insert(0,memory);
+        }
+
+    return sb.toString();
     }
 }
