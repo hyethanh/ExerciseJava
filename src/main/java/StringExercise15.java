@@ -2,7 +2,6 @@ public class StringExercise15 {
 
     public int findVerifyNumber(String str) {
 
-        int x;
         int sum = 0;
 
         for (int i = 0; i < str.length(); i++) {
