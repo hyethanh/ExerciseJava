@@ -2,12 +2,12 @@ import java.util.Arrays;
 
 public class Exercise16 {
 
-    public double edgeTriangle(int x1, int y1, int x2, int y2) {
+    public double edgeTriangle(double x1, double y1, double x2, double y2) {
 
         return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
     }
 
-    public String Triangle(int x1, int y1, int x2, int y2, int x3, int y3) {
+    public String Triangle(double x1, double y1, double x2, double y2, double x3, double y3) {
 
         String result = "";
         double p;
