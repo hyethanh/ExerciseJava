@@ -12,9 +12,11 @@ public class StringExercise18 {
         return 0;
     }
 
-    public String genZeros(int n){
+    public String genZeros(int n) {
+
         char[] chars = new char[n];
         Arrays.fill(chars, '0');
+
         return new String(chars);
     }
 
@@ -41,37 +43,37 @@ public class StringExercise18 {
         return sb.toString();
     }
 
-    public String multiplyString (String str1,String str2) {
+    public String multiplyString(String str1, String str2) {
 
         StringBuilder sb = new StringBuilder();
         String temp = sb.toString();
 
-        for(int i=str2.length()-1;i>=0;i--){
+        for (int i = str2.length() - 1; i >= 0; i--) {
 
-                temp = addString(temp, multiplyString(str1,str2.charAt(i)-'0')+genZeros(str2.length() - 1 - i));
-            }
+            temp = addString(temp, multiplyString(str1, str2.charAt(i) - '0') + genZeros(str2.length() - 1 - i));
+        }
         sb.append(temp);
 
         return sb.toString();
     }
 
-    public String multiplyString(String str, int n){
+    public String multiplyString(String str, int n) {
 
         StringBuilder sb = new StringBuilder();
-        int memory=0;
+        int memory = 0;
 
-        for(int i=str.length()-1;i>=0;i--){
+        for (int i = str.length() - 1; i >= 0; i--) {
 
-            int t = n*(str.charAt(i)-'0')+memory;
-            //sb.append(t%10);
-            sb.insert(0,t%10);
-            memory = t/10;
+            int t = n * (str.charAt(i) - '0') + memory;
+
+            sb.insert(0, t % 10);
+            memory = t / 10;
         }
 
-        if(memory!=0){
-            sb.insert(0,memory);
+        if (memory != 0) {
+            sb.insert(0, memory);
         }
 
-    return sb.toString();
+        return sb.toString();
     }
 }
