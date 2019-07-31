@@ -12,5 +12,6 @@ public class Exercise16Test {
         assertEquals(new Exercise16().Triangle(0, 0, 0, 3, 4, 0), "La 3 canh cua tam giac vuong co chu vi 12.0, dien tich 6.0");
         assertEquals(new Exercise16().Triangle(0, 0, 0, 3, 0, 4), "Khong phai la ba canh cua tam giac");
 
+
     }
 }
