@@ -89,9 +89,7 @@ public class Triangle {
         a[1] = edgeTriangle(x2, y2, x3, y3);
         a[2] = edgeTriangle(x1, y1, x3, y3);
 
-        double p = a[0] + a[1] + a[2];
-
-        return (double) Math.round(p * 100) / 100;
+        return (double) Math.round((a[0] + a[1] + a[2]) * 100) / 100;
     }
 
     public double getArea() {
@@ -103,9 +101,8 @@ public class Triangle {
         a[2] = edgeTriangle(x1, y1, x3, y3);
 
         double p1 = getPerimeter() / 2;
-        double s = Math.sqrt(p1 * (p1 - a[0]) * (p1 - a[1]) * (p1 - a[2]));
 
-        return (double) Math.round(s * 100) / 100;
+        return Math.sqrt(p1 * (p1 - a[0]) * (p1 - a[1]) * (p1 - a[2]));
 
     }
 
