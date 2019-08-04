@@ -13,6 +13,11 @@ public class Triangle {
     private double x3;
     private double y3;
 
+
+    public Triangle() {
+
+    }
+
     public Triangle(double x1, double y1, double x2, double y2, double x3, double y3) {
 
         this.x1 = x1;
@@ -26,59 +31,63 @@ public class Triangle {
 
     }
 
-    public double egdeTriangle(double x1, double y1, double x2, double y2) {
+
+    public double edgeTriangle(double x1, double y1, double x2, double y2) {
 
         return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
 
+    }
+
+    public boolean is_Triangle(double x1, double y1, double x2, double y2, double x3, double y3) {
+
+        double a[] = new double[3];
+        a[0] = edgeTriangle(x1, y1, x2, y2);
+        a[1] = edgeTriangle(x1, y1, x3, y3);
+        a[2] = edgeTriangle(x2, y2, x3, y3);
+        Arrays.sort(a);
+
+        if (a[0] + a[1] <= a[2]) {
+
+            return false;
+        }
+
+        return true;
     }
 
     public String getType() {
 
         double a[] = new double[3];
 
-        a[0] = egdeTriangle(x1, y1, x2, y2);
-        a[1] = egdeTriangle(x2, y2, x3, y3);
-        a[2] = egdeTriangle(x1, y1, x3, y3);
+        a[0] = edgeTriangle(x1, y1, x2, y2);
+        a[1] = edgeTriangle(x2, y2, x3, y3);
+        a[2] = edgeTriangle(x1, y1, x3, y3);
 
         Arrays.sort(a);
 
-        if (a[0] == a[1] && a[1] == a[2]) {
 
-            return "Tam giac deu";
+        if (a[0] == a[1] || a[1] == a[2]) {
+
+            return "Tam giac can";
+
         } else {
 
-            if ((a[0] == a[1]) && ((a[0] * a[0]) + (a[1] * a[1]) == a[2] * a[2])) {
+            if ((a[0] * a[0]) + (a[1] * a[1]) == a[2] * a[2]) {
 
-                return "Tam giac vuong can";
-
+                return "Tam giac vuong";
             } else {
 
-                if (a[0] == a[1] || a[1] == a[2]) {
-
-                    return "Tam giac can";
-
-                } else {
-
-                    if ((a[0] * a[0]) + (a[1] * a[1]) == a[2] * a[2]) {
-
-                        return "Tam giac vuong";
-                    } else {
-
-                        return "Tam giac thuong";
-                    }
-                }
+                return "Tam giac thuong";
             }
         }
-
     }
 
     public double getPerimeter() {
 
         double a[] = new double[3];
 
-        a[0] = egdeTriangle(x1, y1, x2, y2);
-        a[1] = egdeTriangle(x2, y2, x3, y3);
-        a[2] = egdeTriangle(x1, y1, x3, y3);
+        a[0] = edgeTriangle(x1, y1, x2, y2);
+        a[1] = edgeTriangle(x2, y2, x3, y3);
+        a[2] = edgeTriangle(x1, y1, x3, y3);
 
         double p = a[0] + a[1] + a[2];
 
@@ -89,9 +98,9 @@ public class Triangle {
 
         double a[] = new double[3];
 
-        a[0] = egdeTriangle(x1, y1, x2, y2);
-        a[1] = egdeTriangle(x2, y2, x3, y3);
-        a[2] = egdeTriangle(x1, y1, x3, y3);
+        a[0] = edgeTriangle(x1, y1, x2, y2);
+        a[1] = edgeTriangle(x2, y2, x3, y3);
+        a[2] = edgeTriangle(x1, y1, x3, y3);
 
         double p1 = getPerimeter() / 2;
         double s = Math.sqrt(p1 * (p1 - a[0]) * (p1 - a[1]) * (p1 - a[2]));
