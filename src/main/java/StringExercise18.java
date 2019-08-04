@@ -45,15 +45,14 @@ public class StringExercise18 {
 
     public String multiplyString(String str1, String str2) {
 
-        String temp = "";
-        String mul="";
+        String result = "";
 
         for (int i = str2.length() - 1; i >= 0; i--) {
 
-            mul = multiplyString(str1, str2.charAt(i) - '0') + genZeros(str2.length() - 1 - i);
-            temp = addString(temp, mul);
+            String current = multiplyString(str1, str2.charAt(i) - '0') + genZeros(str2.length() - 1 - i);
+            result = addString(result, current);
         }
-        return temp;
+        return result;
     }
 
     public String multiplyString(String str, int n) {
