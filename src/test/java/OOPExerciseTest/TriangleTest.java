@@ -8,7 +8,14 @@ import static org.junit.Assert.*;
 public class TriangleTest {
 
     @Test
-    public void edgeTriangle_test() {
+    public void isTriangle_test(){
+
+        assertTrue(new Triangle(0,0,1,1,-1,1).isTriangle());
+        assertFalse(new Triangle(0,0,0,1,0,2).isTriangle());
+    }
+
+    @Test
+    public void getDistance_test() {
 
         assertEquals(new Triangle().getDistance(0, 3, 4, 0), 5.0, 0.00);
         assertEquals(new Triangle().getDistance(0, 2, 1, 6), 4.123, 0.001);
