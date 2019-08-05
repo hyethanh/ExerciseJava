@@ -32,35 +32,30 @@ public class Triangle {
     }
 
 
-    public double edgeTriangle(double x1, double y1, double x2, double y2) {
+    public static double getDistance(double x1, double y1, double x2, double y2) {
 
         return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
 
     }
 
-    public boolean is_Triangle(double x1, double y1, double x2, double y2, double x3, double y3) {
+    public boolean isTriangle() {
 
         double a[] = new double[3];
-        a[0] = edgeTriangle(x1, y1, x2, y2);
-        a[1] = edgeTriangle(x1, y1, x3, y3);
-        a[2] = edgeTriangle(x2, y2, x3, y3);
+        a[0] = getDistance(x1, y1, x2, y2);
+        a[1] = getDistance(x1, y1, x3, y3);
+        a[2] = getDistance(x2, y2, x3, y3);
         Arrays.sort(a);
 
-        if (a[0] + a[1] <= a[2]) {
-
-            return false;
-        }
-
-        return true;
+        return ((a[0] + a[1] <= a[2])? false:true);
     }
 
     public String getType() {
 
         double a[] = new double[3];
 
-        a[0] = edgeTriangle(x1, y1, x2, y2);
-        a[1] = edgeTriangle(x2, y2, x3, y3);
-        a[2] = edgeTriangle(x1, y1, x3, y3);
+        a[0] = getDistance(x1, y1, x2, y2);
+        a[1] = getDistance(x2, y2, x3, y3);
+        a[2] = getDistance(x1, y1, x3, y3);
 
         Arrays.sort(a);
 
@@ -85,9 +80,9 @@ public class Triangle {
 
         double a[] = new double[3];
 
-        a[0] = edgeTriangle(x1, y1, x2, y2);
-        a[1] = edgeTriangle(x2, y2, x3, y3);
-        a[2] = edgeTriangle(x1, y1, x3, y3);
+        a[0] = getDistance(x1, y1, x2, y2);
+        a[1] = getDistance(x2, y2, x3, y3);
+        a[2] = getDistance(x1, y1, x3, y3);
 
         return (double) Math.round((a[0] + a[1] + a[2]) * 100) / 100;
     }
@@ -96,9 +91,9 @@ public class Triangle {
 
         double a[] = new double[3];
 
-        a[0] = edgeTriangle(x1, y1, x2, y2);
-        a[1] = edgeTriangle(x2, y2, x3, y3);
-        a[2] = edgeTriangle(x1, y1, x3, y3);
+        a[0] = getDistance(x1, y1, x2, y2);
+        a[1] = getDistance(x2, y2, x3, y3);
+        a[2] = getDistance(x1, y1, x3, y3);
 
         double p1 = getPerimeter() / 2;
 

@@ -8,24 +8,10 @@ import static org.junit.Assert.*;
 public class TriangleTest {
 
     @Test
-    public void Triangle_test() {
-
-        assertTrue(new Triangle().is_Triangle(0, 2, 1, 6, 4, 2));
-        assertTrue(new Triangle().is_Triangle(4, 2, 3, 6, 7, -1));
-        assertTrue(new Triangle().is_Triangle(0, 0, 0, 3, 6, 0));
-        assertTrue(new Triangle().is_Triangle(0, 2, 0, 8, 8, 2));
-
-        assertFalse(new Triangle().is_Triangle(0, 0, 0, 3, 0, 4));
-        assertFalse(new Triangle().is_Triangle(0, 0, 0, 0, 0, 0));
-        assertFalse(new Triangle().is_Triangle(-1, 0, 0, 0, 4, 0));
-
-    }
-
-    @Test
     public void edgeTriangle_test() {
 
-        assertEquals(new Triangle().edgeTriangle(0, 3, 4, 0), 5.0, 0.00);
-        assertEquals(new Triangle().edgeTriangle(0, 2, 1, 6), 4.123, 0.001);
+        assertEquals(new Triangle().getDistance(0, 3, 4, 0), 5.0, 0.00);
+        assertEquals(new Triangle().getDistance(0, 2, 1, 6), 4.123, 0.001);
 
     }
 
